@@ -58,7 +58,7 @@ contract MyGovernorTest is Test {
         uint256 valueToStore = 888;
         string memory description = "Store 888 in the Box";
         bytes memory fnData = abi.encodeWithSignature("store(uint256)", valueToStore);
-        
+
         values.push(0);
         callDatas.push(fnData);
         targets.push(address(box));
@@ -97,6 +97,5 @@ contract MyGovernorTest is Test {
         // 6. Check the Box number is updated
         console.log("Box number after governance proposal executed :", box.getNUmber());
         assertEq(box.getNUmber(), valueToStore);
-
     }
 }
